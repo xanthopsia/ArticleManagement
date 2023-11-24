@@ -1,0 +1,27 @@
+{% include ('includes/header.twig') %}
+
+{% include ('includes/navbar.twig') %}
+
+<div class="max-w-lg mx-auto my-8 p-6 bg-black rounded-lg shadow-lg text-white">
+    <h1 class="text-3xl font-semibold mb-6 text-center">Edit Article</h1>
+    <form class="space-y-4" method="POST" action="/article/edit/{{ article.id }}">
+        <div>
+            <label class="block font-bold mb-2" for="title">Title</label>
+            <input class="bg-white text-black placeholder-black rounded-md py-2 px-4 w-full focus:outline-none focus:bg-gray-100"
+                   id="title" name="title" type="text" value="{{ article.title }}">
+            <small class="text-black">Enter a title</small>
+        </div>
+        <div>
+            <label class="block font-bold mb-2" for="description">Description</label>
+            <textarea
+                    class="bg-white text-black placeholder-black rounded-md py-2 px-4 w-full focus:outline-none focus:bg-gray-100"
+                    id="description" name="description" rows="10">{{ article.description }}</textarea>
+            <small class="text-black">Enter a description</small>
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-white hover:bg-gray-100 text-black font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
+                    type="submit" name="submit">Edit
+            </button>
+        </div>
+    </form>
+</div>
